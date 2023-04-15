@@ -5,18 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>OneUI - Bootstrap 5 Admin Template &amp; UI Framework</title>
+    <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
 
-    <meta name="description"
-        content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework">
-    <meta property="og:site_name" content="OneUI">
-    <meta property="og:description"
-        content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
@@ -35,6 +30,9 @@
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
     <!-- END Stylesheets -->
+    <!-- Scripts -->
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+
 </head>
 
 <body>
@@ -515,7 +513,7 @@
                     <span class="smini-visible">
                         <i class="fa fa-circle-notch text-primary"></i>
                     </span>
-                    <span class="smini-hide fs-5 tracking-wider">One<span class="fw-normal">UI</span></span>
+                    <span class="smini-hide fs-5 tracking-wider">Point<span class="fw-normal"> Of </span> Sales</span>
                 </a>
                 <!-- END Logo -->
 
@@ -528,84 +526,6 @@
                         <i class="far fa-moon"></i>
                     </button>
                     <!-- END Dark Mode -->
-
-                    <!-- Options -->
-                    <div class="dropdown d-inline-block ms-1">
-                        <button type="button" class="btn btn-sm btn-alt-secondary" id="sidebar-themes-dropdown"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-brush"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end fs-sm smini-hide border-0"
-                            aria-labelledby="sidebar-themes-dropdown">
-                            <!-- Color Themes -->
-                            <!-- Layout API, functionality initialized in Template._uiHandleTheme() -->
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="default" href="#">
-                                <span>Default</span>
-                                <i class="fa fa-circle text-default"></i>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="{{ asset('css/themes/amethyst.min.css') }}"
-                                href="#">
-                                <span>Amethyst</span>
-                                <i class="fa fa-circle text-amethyst"></i>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="{{ asset('css/themes/city.min.css') }}"
-                                href="#">
-                                <span>City</span>
-                                <i class="fa fa-circle text-city"></i>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="{{ asset('css/themes/flat.min.css') }}"
-                                href="#">
-                                <span>Flat</span>
-                                <i class="fa fa-circle text-flat"></i>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="{{ asset('css/themes/modern.min.css') }}"
-                                href="#">
-                                <span>Modern</span>
-                                <i class="fa fa-circle text-modern"></i>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-medium"
-                                data-toggle="theme" data-theme="{{ asset('css/themes/smooth.min.css') }}"
-                                href="#">
-                                <span>Smooth</span>
-                                <i class="fa fa-circle text-smooth"></i>
-                            </a>
-                            <!-- END Color Themes -->
-
-                            <div class="dropdown-divider"></div>
-
-                            <!-- Sidebar Styles -->
-                            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                            <a class="dropdown-item fw-medium" data-toggle="layout" data-action="sidebar_style_light"
-                                href="javascript:void(0)">
-                                <span>Sidebar Light</span>
-                            </a>
-                            <a class="dropdown-item fw-medium" data-toggle="layout" data-action="sidebar_style_dark"
-                                href="javascript:void(0)">
-                                <span>Sidebar Dark</span>
-                            </a>
-                            <!-- END Sidebar Styles -->
-
-                            <div class="dropdown-divider"></div>
-
-                            <!-- Header Styles -->
-                            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                            <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_light"
-                                href="javascript:void(0)">
-                                <span>Header Light</span>
-                            </a>
-                            <a class="dropdown-item fw-medium" data-toggle="layout" data-action="header_style_dark"
-                                href="javascript:void(0)">
-                                <span>Header Dark</span>
-                            </a>
-                            <!-- END Header Styles -->
-                        </div>
-                    </div>
-                    <!-- END Options -->
 
                     <!-- Close Sidebar, Visible only on mobile screens -->
                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->

@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-
+@section('title','Login')
 @section('content')
 <!-- Header -->
 <div class="text-center mb-5">
