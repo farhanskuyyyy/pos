@@ -108,6 +108,11 @@
                                 <li class="group"><a href="#testimoni" class="text-base text-dark py-2 px-8 flex group-hover:text-primary dark:text-white">Testimoni</a></li>
                                 <li class="group"><a href="#about" class="text-base text-dark py-2 px-8 flex group-hover:text-primary dark:text-white">About</a></li>
                                 <li class="group"><a href="#contact" class="text-base text-dark py-2 px-8 flex group-hover:text-primary dark:text-white">Contact</a></li>
+                                @if (auth()->user())
+                                    <li class="group"><a href="{{ route('dashboard.index') }}" class="text-base text-dark py-2 px-8 flex group-hover:text-primary dark:text-white">Dashboard</a></li>
+                                @else
+                                    <li class="group"><a href="{{ route('login') }}" class="text-base text-dark py-2 px-8 flex group-hover:text-primary dark:text-white">Login</a></li>
+                                @endif
                                 <li class="mt-3 flex items-center pl-8 lg:mt-0">
                                     <div class="flex">
                                         <span class="mr-2 text-sm text-slate-500">Light</span>

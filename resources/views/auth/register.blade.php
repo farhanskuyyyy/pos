@@ -56,7 +56,7 @@
             <div class="mb-4">
                 <div class="d-md-flex align-items-md-center justify-content-md-between">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="signup-terms" name="signup-terms">
+                        <input class="form-check-input" type="checkbox" value="" id="signup-terms" name="signup-terms" required>
                         <label class="form-check-label" for="signup-terms">I agree to Terms &amp; Conditions</label>
                     </div>
                     <div class="py-2">
