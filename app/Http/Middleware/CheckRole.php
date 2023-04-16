@@ -19,7 +19,8 @@ class CheckRole
     public function handle(Request $request, Closure $next): Response
     {
         $routeName = request()->route()->getName();
-        if ($routeName != 'home') {
+        $exceptionPage = ['home','logout'];
+        if (!in_array($routeName,$exceptionPage) && auth()->user()) {
             $userRepository = App::make(UserRepositoryInterface::class);
             $user = $userRepository->findUser(auth()->user()->id);
 

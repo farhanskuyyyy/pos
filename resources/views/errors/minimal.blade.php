@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -24,59 +25,61 @@
     <!-- Stylesheets -->
     <!-- OneUI framework -->
     <link rel="stylesheet" id="css-main" href="{{ asset('css/oneui.min.css') }}">
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- Page Container -->
     <div id="page-container">
 
-      <!-- Main Container -->
-      <main id="main-container">
-        <!-- Page Content -->
-        <div class="hero">
-          <div class="hero-inner text-center">
-            <div class="bg-body-extra-light">
-              <div class="content content-full overflow-hidden">
-                <div class="py-4">
-                  <!-- Error Header -->
-                  <h1 class="display-1 fw-bolder text-city">
-                    @yield('code')
-                </h1>
-                  <h2 class="h4 fw-normal text-muted mb-5">
-                    @yield('message')
-                  </h2>
-                  <!-- END Error Header -->
+        <!-- Main Container -->
+        <main id="main-container">
+            <!-- Page Content -->
+            <div class="hero">
+                <div class="hero-inner text-center">
+                    <div class="bg-body-extra-light">
+                        <div class="content content-full overflow-hidden">
+                            <div class="py-4">
+                                <!-- Error Header -->
+                                <h1 class="display-1 fw-bolder text-city">
+                                    @yield('code')
+                                </h1>
+                                <h2 class="h4 fw-normal text-muted mb-5">
+                                    @yield('message')
+                                </h2>
+                                <!-- END Error Header -->
 
-                  <!-- Search Form -->
-                  <form action="#" method="get">
-                    <div class="row justify-content-center mb-4">
-                      <div class="col-sm-6 col-xl-3">
-                        <div class="input-group input-group-lg">
-                          <input class="form-control form-control-alt" type="text" placeholder="Search application..">
-                          <button type="submit" class="btn btn-dark">
-                            <i class="fa fa-search opacity-75"></i>
-                          </button>
+                                <!-- Search Form -->
+                                <form action="#" method="get">
+                                    <div class="row justify-content-center mb-4">
+                                        <div class="col-sm-6 col-xl-3">
+                                            <div class="input-group input-group-lg">
+                                                <input class="form-control form-control-alt" type="text"
+                                                    placeholder="Search application..">
+                                                <button type="submit" class="btn btn-dark">
+                                                    <i class="fa fa-search opacity-75"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- END Search Form -->
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </form>
-                  <!-- END Search Form -->
+                    <div class="content content-full text-muted fs-sm fw-medium">
+                        <!-- Error Footer -->
+                        <a class="link-fx" href="{{ route('dashboard.index') }}">Go Back to Dashboard</a>
+                        <!-- END Error Footer -->
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="content content-full text-muted fs-sm fw-medium">
-              <!-- Error Footer -->
-              <a class="link-fx" href="{{ route('dashboard.index') }}">Go Back to Dashboard</a>
-              <!-- END Error Footer -->
-            </div>
-          </div>
-        </div>
-        <!-- END Page Content -->
-      </main>
-      <!-- END Main Container -->
+            <!-- END Page Content -->
+        </main>
+        <!-- END Main Container -->
     </div>
     <!-- END Page Container -->
 
     <script src="{{ asset('/js/oneui.app.min.js') }}"></script>
-  </body>
+</body>
+
 </html>
