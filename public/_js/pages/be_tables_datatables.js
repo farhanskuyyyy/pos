@@ -43,51 +43,7 @@ class pageTablesDatatables {
       }
     });
 
-    // Init full DataTable
-    jQuery('.js-dataTable-full').DataTable({
-      pageLength: 10,
-      lengthMenu: [[5, 10, 15, 20], [5, 10, 15, 20]],
-      autoWidth: false
-    });
-
-    // Init full extra DataTable
-    jQuery('.js-dataTable-full-pagination').DataTable({
-      pagingType: "full_numbers",
-      pageLength: 10,
-      lengthMenu: [[5, 10, 15, 20], [5, 10, 15, 20]],
-      autoWidth: false
-    });
-
-    // Init simple DataTable
-    jQuery('.js-dataTable-simple').DataTable({
-      pageLength: 10,
-      lengthMenu: false,
-      searching: false,
-      autoWidth: false,
-      dom: "<'row'<'col-sm-12'tr>>" +
-        "<'row'<'col-sm-6'i><'col-sm-6'p>>"
-    });
-
-    // Init DataTable with Buttons
-    jQuery('.js-dataTable-buttons').DataTable({
-      pageLength: 10,
-      lengthMenu: [[5, 10, 15, 20], [5, 10, 15, 20]],
-      autoWidth: false,
-      buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
-      dom: "<'row'<'col-sm-12'<'text-center bg-body-light py-2 mb-2'B>>>" +
-        "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>"
-    });
-
-    // Init responsive DataTable
-    jQuery('.js-dataTable-responsive').DataTable({
-      pagingType: "full_numbers",
-      pageLength: 10,
-      lengthMenu: [[5, 10, 15, 20], [5, 10, 15, 20]],
-      autoWidth: false,
-      responsive: true
-    });
   }
-
   /*
    * Init functionality
    *

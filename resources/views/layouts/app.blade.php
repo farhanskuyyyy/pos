@@ -28,6 +28,8 @@
     <link rel="stylesheet" id="css-main" href="{{ asset('css/oneui.min.css') }}">
     <!-- END Stylesheets -->
 
+    @yield('css')
+
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
     @livewireStyles
@@ -155,8 +157,9 @@
     </div>
     <!-- END Page Container -->
 
-    <script src="{{ asset('/js/oneui.app.min.js') }}"></script>
+    <script src="{{ asset('js/oneui.app.min.js') }}"></script>
 
+    @yield('js')
     <!-- Page JS Plugins -->
     <script src="{{ asset('js/plugins/chart.js/chart.min.js') }}"></script>
 
