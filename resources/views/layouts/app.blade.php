@@ -10,6 +10,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta id="metaurl" name="url" content="{{ url('/') }}">
 
     <!-- Open Graph Meta -->
     <meta property="og:type" content="website">
@@ -26,6 +28,9 @@
     <!-- Stylesheets -->
     <!-- OneUI framework -->
     <link rel="stylesheet" id="css-main" href="{{ asset('css/oneui.min.css') }}">
+    {{-- SweetAlert --}}
+    <link rel="stylesheet" href="{{ asset('js/plugins/sweetalert2/sweetalert2.min.css')}}">
+
     <!-- END Stylesheets -->
 
     @yield('css')
@@ -135,7 +140,11 @@
 
 
         <!-- Page Content -->
-        @yield('content')
+            <!-- Main Container -->
+            <main id="main-container">
+                @yield('content')
+            </main>
+            <!-- END Main Container -->
         <!-- END Page Content -->
 
 
@@ -158,13 +167,15 @@
     <!-- END Page Container -->
 
     <script src="{{ asset('js/oneui.app.min.js') }}"></script>
-
-    @yield('js')
+    <script src="{{ asset('js/lib/jquery.min.js') }}"></script>
     <!-- Page JS Plugins -->
     <script src="{{ asset('js/plugins/chart.js/chart.min.js') }}"></script>
-
+    <script src="{{ asset('js/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
     <!-- Page JS Code -->
     <script src="{{ asset('js/pages/be_pages_dashboard.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+    @yield('js')
     @livewireScripts
 </body>
 

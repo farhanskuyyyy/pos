@@ -18,19 +18,19 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $routeName = request()->route()->getName();
-        $exceptionPage = ['home','logout'];
-        if (!in_array($routeName,$exceptionPage) && auth()->user()) {
-            $userRepository = App::make(UserRepositoryInterface::class);
-            $user = $userRepository->findUser(auth()->user()->id);
+        // $routeName = request()->route()->getName();
+        // $exceptionPage = ['home','logout'];
+        // if (!in_array($routeName,$exceptionPage) && auth()->user()) {
+        //     $userRepository = App::make(UserRepositoryInterface::class);
+        //     $user = $userRepository->findUser(auth()->user()->id);
 
-            $menuRepository = App::make(MenuRepositoryInterface::class);
-            $isGranted = $menuRepository->checkRoleHasMenu($user->role_id,$routeName);
+        //     $menuRepository = App::make(MenuRepositoryInterface::class);
+        //     $isGranted = $menuRepository->checkRoleHasMenu($user->role_id,$routeName);
 
-            if (!$isGranted) {
-                abort(403);
-            }
-        }
+        //     if (!$isGranted) {
+        //         abort(403);
+        //     }
+        // }
 
         return $next($request);
     }

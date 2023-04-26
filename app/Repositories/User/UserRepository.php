@@ -7,9 +7,18 @@ use App\Repositories\User\UserRepositoryInterface;
 
 class UserRepository implements UserRepositoryInterface
 {
-    public function all()
+    public function getAll()
     {
-        return User::all();
+        return User::all()
+            ->map(function ($user) {
+                return (object)[
+                    "id" => $user->id,
+                    "name" => $user->name ?? ' - ',
+                    "email" => $user->email ?? ' - ',
+                    "status" => $user->status ? 'active' : 'inactive',
+                    "role" => $user->role->name ?? ' - '
+                ];
+            });
     }
 
     public function findUser($id)
