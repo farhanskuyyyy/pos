@@ -10,17 +10,16 @@ class View extends Component
 {
     public $user;
 
-    protected $listeners = ['viewData' => 'updatedUserId'];
+    protected $listeners = ['viewData'];
 
     public function render()
     {
         return view('livewire.user.view');
     }
 
-    public function updatedUserId($id)
+    public function viewData($id)
     {
         $userRepository = App::make(UserRepositoryInterface::class);
         $this->user = $userRepository->findUser($id);
-        $this->reset();
     }
 }

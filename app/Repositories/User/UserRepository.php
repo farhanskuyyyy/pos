@@ -3,6 +3,8 @@
 namespace App\Repositories\User;
 
 use App\Models\User;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use App\Repositories\User\UserRepositoryInterface;
 
 class UserRepository implements UserRepositoryInterface
@@ -24,5 +26,36 @@ class UserRepository implements UserRepositoryInterface
     public function findUser($id)
     {
         return User::where('id', $id)->first();
+    }
+
+    public function insert($user)
+    {
+        try {
+            User::insert($user);
+            return true;
+        } catch (\Throwable $th) {
+            return false;
+        }
+    }
+
+    public function update($id,$user)
+    {
+        try {
+            User::where('id',$id)->update($user);
+            return true;
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
+
+    }
+
+    public function delete($id)
+    {
+        try {
+            User::where('id',$id)->delete();
+            return true;
+        } catch (\Throwable $th) {
+            return false;
+        }
     }
 }

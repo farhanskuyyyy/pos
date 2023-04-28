@@ -30,7 +30,7 @@
         <!-- Quick Overview -->
         <div class="row">
             <div class="col-6 col-lg-3">
-                <a class="block block-rounded block-link-shadow text-center" href="{{ route('user.create') }}">
+                <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)" id="create">
                     <div class="block-content block-content-full">
                         <div class="fs-2 fw-semibold text-success">
                             <i class="fa fa-plus"></i>
@@ -102,7 +102,15 @@
             </div>
         </div>
     </div>
-    @livewire('user.view')
+    <div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="modal-block-extra-large" aria-hidden="true">
+        @livewire('user.create')
+    </div>
+    <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="modal-block-extra-large" aria-hidden="true">
+        @livewire('user.edit')
+    </div>
+    <div class="modal fade" id="modal-view" tabindex="-1" role="dialog" aria-labelledby="modal-block-extra-large" aria-hidden="true">
+        @livewire('user.view')
+    </div>
     <!-- END Page Content -->
 @endsection
 
@@ -190,9 +198,9 @@
                             return `<button class="btn btn-sm btn-alt-info view" type="button" data-bs-toggle="tooltip" title="View" data-id="${data.id}">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </button>
-                                    <a class="btn btn-sm btn-alt-warning" href="${base_url+'/user/edit/'+data.id}" data-bs-toggle="tooltip" title="Edit" data-id="${data.id}">
+                                    <button class="btn btn-sm btn-alt-warning edit" type="button" data-bs-toggle="tooltip" title="Edit" data-id="${data.id}">
                                         <i class="fa fa-fw fa-pen-to-square"></i>
-                                    </a>
+                                    </button>
                                     <a class="btn btn-sm btn-alt-danger delete" href="javascript:void(0)" data-bs-toggle="tooltip" title="Delete" data-id="${data.id}">
                                         <i class="fa fa-fw fa-times text-danger"></i>
                                     </a>`;
@@ -243,9 +251,20 @@
             $("#table-user tbody").on("click", ".view", function () {
                 var id = $(this).attr('data-id');
                 Livewire.emit('viewData',id);
-                console.log(id)
-                $("#modal-view").modal('show');
                 $("#modal-view").modal({backdrop: "static"});
+                $("#modal-view").modal('show');
+            });
+
+            $("#table-user tbody").on("click", ".edit", function () {
+                var id = $(this).attr('data-id');
+                Livewire.emit('editData',id);
+                $("#modal-edit").modal({backdrop: "static"});
+                $("#modal-edit").modal('show');
+            });
+
+            $("#create").on("click", function () {
+                $("#modal-create").modal({backdrop: "static"});
+                $("#modal-create").modal('show');
             });
         });
     </script>

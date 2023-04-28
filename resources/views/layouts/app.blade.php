@@ -177,6 +177,7 @@
     <script src="{{ asset('js/custom.js') }}"></script>
     @yield('js')
     @livewireScripts
+    @stack('scripts')
 </body>
 
 </html>

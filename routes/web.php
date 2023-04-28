@@ -28,12 +28,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::prefix('user')->name('user.')->group(function(){
         Route::get('/', [UserController::class, 'index'])->name('index');
-        Route::get('/create', [UserController::class, 'create'])->name('create');
-        Route::post('/store', [UserController::class, 'store'])->name('store');
-        Route::get('/edit/{user_id}', [UserController::class, 'edit'])->name('edit');
-        Route::put('/update', [UserController::class, 'update'])->name('update');
         Route::delete('/delete/{user_id}', [UserController::class, 'delete'])->name('delete');
-        Route::put('/update-password', [UserController::class, 'update-password'])->name('update.password');
         Route::get('/user-list', [UserController::class, 'getUserList'])->name('user-list');
     });
 });
